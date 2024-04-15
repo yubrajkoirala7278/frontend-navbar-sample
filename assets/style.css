@@ -57,6 +57,43 @@ body {
     display: none;
 }
 
+/* when hove then display horizontal lines in top and bottom of nav links */
+.navbar-link {
+    position: relative;
+    padding: 8px 0;
+    color: #333;
+}
+
+.navbar-link::before,
+.navbar-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #333;
+    /* Change color as needed */
+    transform: scaleX(0);
+    /* Initially hidden */
+    transition: transform 0.3s ease;
+    /* Smooth transform transition */
+}
+
+.navbar-link::before {
+    top: 0;
+}
+
+.navbar-link::after {
+    bottom: 0;
+}
+
+.navbar-link:hover::before,
+.navbar-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* end of displaying lines in top and bottom of nav links */
+
 /* =========end of navbar========== */
 
 /* ======mobile navbar view============= */
