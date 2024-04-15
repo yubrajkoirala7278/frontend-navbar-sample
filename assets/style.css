@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+html {
+    /* 1rem=10px */
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* =========navbar============ */
+.header {
+    padding: 0 4.8rem;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e7f5ff;
+}
+
+.header .logo {
+    height: 30px;
+}
+
+.navbar-list {
+    display: flex;
+    gap: 4.8rem;
+    list-style: none;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #212529;
+    transition: all 0.3s;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+    color: #364fc7;
+}
+
+.mobile-navbar-btn {
+    display: none;
+}
+
+/* =========end of navbar========== */
+
+/* ======mobile navbar view============= */
+.mobile-navbar-btn {
+    background: transparent;
+    cursor: pointer;
+}
+
+.mobile-nav-icon {
+    font-size: 4rem;
+    color: #212529;
+}
+
+.close-btn {
+    display: none;
+}
+
+@media(max-width:980px) {
+    .mobile-navbar-btn {
+        display: block;
+        z-index: 999;
+        border: 3px solid #212529;
+        color: #212529;
+    }
+
+    .header .logo {
+        height: 30px;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 100vh;
+        background: #e7f5ff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* display navbar div to center vertically and horizontally for mobile device*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* to get the transition from right to left navbar */
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+
+        /* hide overflow navigation */
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    /* display nav list items vertical  for mobile device */
+    .navbar-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* display navbar when click on hamburger (Hints: if active class present then navigation will display else it will hide) */
+    .active .navbar {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .mobile-navbar-btn .close-btn {
+        display: block;
+    }
+
+    .active .mobile-navbar-btn .menu-btn {
+        display: none;
+    }
+}
+
+@media(max-width:560px) {
+    .header {
+        padding: 0 2.4rem;
+    }
+
+    .header .logo {
+        height: 30px;
+    }
+}
+
+/* =====end of mobile navbar view======= */
+
+/* ========Hero Section========== */
+.section-hero {
+    background-color: #a5d8ff;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========End of Hero Section==================== */
